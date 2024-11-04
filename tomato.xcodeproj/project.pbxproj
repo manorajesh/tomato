@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0EADA82CD827360019559C /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0EADA72CD827360019559C /* Timer.swift */; };
+		3F0EADAC2CD84FDB0019559C /* BreathingGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0EADAB2CD84FDB0019559C /* BreathingGradient.swift */; };
+		3F0EADAE2CD864F50019559C /* TimeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0EADAD2CD864F50019559C /* TimeEditor.swift */; };
 		3F6169392CD1BD3C00FC32EC /* tomato Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3F6169382CD1BD3C00FC32EC /* tomato Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3F61693E2CD1BD3C00FC32EC /* tomatoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F61693D2CD1BD3C00FC32EC /* tomatoApp.swift */; };
 		3F6169402CD1BD3C00FC32EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F61693F2CD1BD3C00FC32EC /* ContentView.swift */; };
@@ -39,6 +42,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F0EADA72CD827360019559C /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		3F0EADAB2CD84FDB0019559C /* BreathingGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingGradient.swift; sourceTree = "<group>"; };
+		3F0EADAD2CD864F50019559C /* TimeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEditor.swift; sourceTree = "<group>"; };
 		3F6169322CD1BD3C00FC32EC /* tomato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tomato.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6169382CD1BD3C00FC32EC /* tomato Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tomato Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F61693D2CD1BD3C00FC32EC /* tomatoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tomatoApp.swift; sourceTree = "<group>"; };
@@ -80,6 +86,9 @@
 			children = (
 				3F61693D2CD1BD3C00FC32EC /* tomatoApp.swift */,
 				3F61693F2CD1BD3C00FC32EC /* ContentView.swift */,
+				3F0EADAD2CD864F50019559C /* TimeEditor.swift */,
+				3F0EADAB2CD84FDB0019559C /* BreathingGradient.swift */,
+				3F0EADA72CD827360019559C /* Timer.swift */,
 				3F6169412CD1BD3E00FC32EC /* Assets.xcassets */,
 				3F6169432CD1BD3E00FC32EC /* Preview Content */,
 			);
@@ -192,6 +201,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F0EADAE2CD864F50019559C /* TimeEditor.swift in Sources */,
+				3F0EADAC2CD84FDB0019559C /* BreathingGradient.swift in Sources */,
+				3F0EADA82CD827360019559C /* Timer.swift in Sources */,
 				3F6169402CD1BD3C00FC32EC /* ContentView.swift in Sources */,
 				3F61693E2CD1BD3C00FC32EC /* tomatoApp.swift in Sources */,
 			);
