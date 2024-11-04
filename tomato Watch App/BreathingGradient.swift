@@ -10,11 +10,14 @@ import SwiftUI
 struct BreathingGradient: View {
     @State private var animateGradient = false
     @State private var gradientCenter: UnitPoint = .center
+    @Binding var usePrimaryColors: Bool
 
     var body: some View {
         RadialGradient(
-            gradient: Gradient(colors: [
+            gradient: usePrimaryColors ? Gradient(colors: [
                 .blue, .purple, .pink, .red, .yellow
+            ]) : Gradient(colors: [
+                .cyan, .indigo, .teal, .green, .orange
             ]),
             center: gradientCenter,
             startRadius: 0,

@@ -17,10 +17,12 @@ struct ContentView: View {
     @State private var selectedFocusTime = 25 // in minutes
     @State private var selectedBreakTime = 5 // in minutes
     
+    @Environment(\.scenePhase) var scenePhase
+    
     var body: some View {
         ZStack {
             if timerModel.isActive {
-                BreathingGradient().mask() {
+                BreathingGradient(usePrimaryColors: $timerModel.isWorkSession).mask() {
                     Circle().blur(radius: 30.0)
                 }
             }
@@ -29,7 +31,7 @@ struct ContentView: View {
                 if !timerModel.isActive {
                     HStack {
                         Spacer()
-                        Text("\(timerModel.breakTime/60) min break")
+                        Text(timerModel.isWorkSession ? "\(timerModel.breakTime/60) min break" : "\(timerModel.focusTime/60) min focus")
                             .font(.caption)
                             .opacity(0.5)
                             .padding(.trailing)
@@ -71,7 +73,7 @@ struct ContentView: View {
                                 isEditingTime.toggle() // Show the time editor sheet
                             }
                     }
-                    .background(BreathingGradient().opacity(0.6))
+                    .background(BreathingGradient(usePrimaryColors: $timerModel.isWorkSession).opacity(0.6))
                 }
             }
             
@@ -88,6 +90,16 @@ struct ContentView: View {
                 }
             )
         }
+        .onChange(of: scenePhase) {
+            if scenePhase == .active {
+                if timerModel.isActive {
+                    timerModel.startTimer()
+                }
+            } else if scenePhase == .inactive || scenePhase == .background {
+                timerModel.timer?.cancel()
+            }
+        }
+        .environmentObject(timerModel)
     }
     
     func toggleTimer() {

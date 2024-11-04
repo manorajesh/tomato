@@ -11,6 +11,8 @@ struct TimeEditor: View {
     @Binding var selectedFocusTime: Int
     @Binding var selectedBreakTime: Int
     var onSave: () -> Void
+    
+    @EnvironmentObject var timerModel: TimerModel
 
     var body: some View {
         NavigationStack {
@@ -18,13 +20,14 @@ struct TimeEditor: View {
                 HStack {
                     Picker("Focus Time", selection: $selectedFocusTime) {
                         ForEach(0...60, id: \.self) { time in
-                            Text("\(time) min")
+                            Text("\(time)")
                         }
                     }
                     .pickerStyle(WheelPickerStyle())
+                    Spacer()
                     Picker("Break Time", selection: $selectedBreakTime) {
                         ForEach(0...60, id: \.self) { time in
-                            Text("\(time) min")
+                            Text("\(time)")
                         }
                     }
                     .pickerStyle(WheelPickerStyle())
@@ -40,6 +43,6 @@ struct TimeEditor: View {
                 .opacity(selectedFocusTime == 0 ? 0.4 : 1.0)
             }
         }
-        .background(BreathingGradient().opacity(0.2))
+        .background(BreathingGradient(usePrimaryColors: $timerModel.isWorkSession).opacity(0.2))
     }
 }
